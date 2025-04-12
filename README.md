@@ -61,22 +61,23 @@ The script performs basic checks for these commands at startup.
    ```bash
    chmod +x port-killer.sh
    ```
+  
   **Run:**
 
     *   **Check Default Ports:**
         To check the default ports defined within the script (e.g., 3000, 8000):
-        ```bash
-        ./port-killer.sh
-        ```
+  ```bash
+  ./port-killer.sh
+  ```
 
-    *   **Check Specific Ports:**
-        To check one or more specific ports, list them as arguments:
-   ```bash
+  *   **Check Specific Ports:**
+      To check one or more specific ports, list them as arguments:
+  ```bash
    # Check ports 8080 and 9000
    ./port-killer.sh 8080 9000
    # Check only port 4000
    ./port-killer.sh 4000
-   ```
+  ```
 
 ### The Kill Prompt
 
