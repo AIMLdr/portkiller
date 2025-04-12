@@ -52,8 +52,6 @@ The script requires the following standard Linux/macOS command-line utilities:
 
 The script performs basic checks for these commands at startup.
 
----
-
 ##  Usage ▶️
 
 ### Basic Execution
@@ -93,7 +91,7 @@ Kill process(es) on port 8000? (y/N, default N after 5 sec):
 *   **To Kill:** Type `y` or `Y` and press Enter within the timeout period.
 *   **To Skip:** Press Enter, type `n` or `N`, or let the timeout expire.
 
----
+
 
 ##  How It Works ⚙️
 
@@ -109,7 +107,7 @@ Kill process(es) on port 8000? (y/N, default N after 5 sec):
     *   If still running, sends `SIGKILL` (`kill -9 <pid>`) for forceful termination.
   **Logging:** Reports the status for each port and the outcome of any kill attempts.
 
----
+
 
 ##  Configuration 🔧
 
