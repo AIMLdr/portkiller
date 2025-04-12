@@ -58,9 +58,9 @@ The script performs basic checks for these commands at startup.
 
   **Save:** Save the script code to a file, for example, `port-killer.sh`.
   **Make Executable:**
-    ```bash
-    chmod +x port-killer.sh
-    ```
+   ```bash
+   chmod +x port-killer.sh
+   ```
   **Run:**
 
     *   **Check Default Ports:**
@@ -71,13 +71,12 @@ The script performs basic checks for these commands at startup.
 
     *   **Check Specific Ports:**
         To check one or more specific ports, list them as arguments:
-        ```bash
-        # Check ports 8080 and 9000
-        ./port-killer.sh 8080 9000
-
-        # Check only port 4000
-        ./port-killer.sh 4000
-        ```
+   ```bash
+   # Check ports 8080 and 9000
+   ./port-killer.sh 8080 9000
+   # Check only port 4000
+   ./port-killer.sh 4000
+   ```
 
 ### The Kill Prompt
 
