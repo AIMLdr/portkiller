@@ -4,11 +4,11 @@
 
 ---
 
-**A command-line utility to identify and interactively terminate processes listening on specified TCP ports.**
+**A command-line utility to identify and interactively terminate processes listening on specified TCP ports**
 
-⚠️ **Warning:** This script can terminate running processes. Use with extreme caution, especially with `sudo`, as killing the wrong process can cause data loss or system instability. ⚠️
+⚠️ **Warning:** This script can terminate running processes. Use with extreme caution, especially with `sudo`, as killing the wrong process can cause data loss or system instability ⚠️
 
-This script helps developers and system administrators quickly find and stop applications occupying specific network ports, commonly needed during development or troubleshooting.
+This script helps developers and system administrators quickly find and stop applications occupying specific network ports, commonly needed during development or troubleshooting
 
 ## Table of Contents
 
