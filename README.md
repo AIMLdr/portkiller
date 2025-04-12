@@ -163,7 +163,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-Use code with caution.
-(Remember to replace [Year] and [Your Name/Organization])
-Contributing 🤝
-Suggestions and improvements are welcome. Please feel free to open an issue or submit a pull request.
