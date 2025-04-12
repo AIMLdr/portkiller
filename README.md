@@ -19,21 +19,21 @@ This script helps developers and system administrators quickly find and stop app
 
 ##  Introduction
 
-`port-killer.sh` is a Bash script designed to simplify the task of freeing up TCP network ports. It scans specified ports, identifies any listening processes, displays detailed information about them, and offers an interactive, time-limited prompt to terminate those processes.
+`port-killer.sh` is a Bash script designed to simplify the task of freeing up TCP network ports. It scans specified ports, identifies any listening processes, displays detailed information about them, and offers an interactive, time-limited prompt to terminate those processes
 
-Its primary use case is to quickly stop lingering development servers or other applications that might be preventing a new process from binding to a required port.
+Its primary use case is to quickly stop lingering development servers or other applications that might be preventing a new process from binding to a required port
 
 ---
 
 ##  Features ✨
 
-*   **Flexible Port Specification:** Checks default ports (`3000`, `8000`) or accepts any number of ports as command-line arguments.
-*   **Robust Process Detection:** Utilizes `lsof`, `ss`, or `netstat` (in order of preference) to find listening TCP processes, maximizing compatibility.
-*   **Detailed Process Information:** Shows PID, User, Command Name, and Full Arguments (`ps`) for identified processes.
-*   **Interactive Confirmation:** Prompts the user with a configurable timeout before attempting termination, defaulting to *no* action.
-*   **Graceful & Forceful Termination:** Attempts `SIGTERM` first, followed by `SIGKILL` if the process doesn't exit promptly.
-*   **Input Validation:** Ensures provided port arguments are valid numbers (1-65535).
-*   **Clear Logging:** Provides step-by-step information about checks, findings, user choices, and termination results.
+*   **Flexible Port Specification:** Checks default ports (`3000`, `8000`) or accepts any number of ports as command-line arguments
+*   **Robust Process Detection:** Utilizes `lsof`, `ss`, or `netstat` (in order of preference) to find listening TCP processes, maximizing compatibility
+*   **Detailed Process Information:** Shows PID, User, Command Name, and Full Arguments (`ps`) for identified processes
+*   **Interactive Confirmation:** Prompts the user with a configurable timeout before attempting termination, defaulting to *no* action
+*   **Graceful & Forceful Termination:** Attempts `SIGTERM` first, followed by `SIGKILL` if the process doesn't exit promptly
+*   **Input Validation:** Ensures provided port arguments are valid numbers (1-65535)
+*   **Clear Logging:** Provides step-by-step information about checks, findings, user choices, and termination results
 
 ---
 
