@@ -1,4 +1,4 @@
-# Port Killer Script (`port-killer.sh`) ☠️
+# Port Killer Script (`portkiller.sh`) ☠️
 
 **Version:** 1.1
 
@@ -12,22 +12,12 @@ This script helps developers and system administrators quickly find and stop app
 
 ## Table of Contents
 
-1.  [Introduction](#1-introduction)
-2.  [Features](#2-features-✨)
-3.  [Prerequisites](#3-prerequisites-🛠️)
-4.  [Usage](#4-usage-▶️)
-    *   [Basic Execution](#basic-execution)
-    *   [Specifying Ports](#specifying-ports)
+
     *   [The Kill Prompt](#the-kill-prompt)
-5.  [How It Works](#5-how-it-works-⚙️)
-6.  [Configuration](#6-configuration-🔧)
-7.  [Important Notes & Warnings](#7-important-notes--warnings-☠️)
-8.  [License](#8-license-📜)
-9.  [Contributing](#9-contributing-🤝)
 
 ---
 
-## 1. Introduction
+##  Introduction
 
 `port-killer.sh` is a Bash script designed to simplify the task of freeing up TCP network ports. It scans specified ports, identifies any listening processes, displays detailed information about them, and offers an interactive, time-limited prompt to terminate those processes.
 
@@ -35,7 +25,7 @@ Its primary use case is to quickly stop lingering development servers or other a
 
 ---
 
-## 2. Features ✨
+##  Features ✨
 
 *   **Flexible Port Specification:** Checks default ports (`3000`, `8000`) or accepts any number of ports as command-line arguments.
 *   **Robust Process Detection:** Utilizes `lsof`, `ss`, or `netstat` (in order of preference) to find listening TCP processes, maximizing compatibility.
@@ -47,7 +37,7 @@ Its primary use case is to quickly stop lingering development servers or other a
 
 ---
 
-## 3. Prerequisites 🛠️
+##  Prerequisites 🛠️
 
 The script requires the following standard Linux/macOS command-line utilities:
 
@@ -64,16 +54,16 @@ The script performs basic checks for these commands at startup.
 
 ---
 
-## 4. Usage ▶️
+##  Usage ▶️
 
 ### Basic Execution
 
-1.  **Save:** Save the script code to a file, for example, `port-killer.sh`.
-2.  **Make Executable:**
+  **Save:** Save the script code to a file, for example, `port-killer.sh`.
+  **Make Executable:**
     ```bash
     chmod +x port-killer.sh
     ```
-3.  **Run:**
+  **Run:**
 
     *   **Check Default Ports:**
         To check the default ports defined within the script (e.g., 3000, 8000):
@@ -105,23 +95,23 @@ Kill process(es) on port 8000? (y/N, default N after 5 sec):
 
 ---
 
-## 5. How It Works ⚙️
+##  How It Works ⚙️
 
-1.  **Initialization:** Checks prerequisites and determines the target ports (arguments or defaults). Validates port numbers.
-2.  **Port Iteration:** Loops through each valid port.
-3.  **Process Detection:** Sequentially tries `lsof`, `ss`, and `netstat` to find PIDs associated with listening TCP sockets on the current port.
-4.  **PID Extraction & Display:** If PIDs are found, parses them and uses `ps` to display detailed process information.
-5.  **User Confirmation:** Prompts the user interactively with a timeout.
-6.  **Termination Sequence (if confirmed):**
+  **Initialization:** Checks prerequisites and determines the target ports (arguments or defaults). Validates port numbers.
+  **Port Iteration:** Loops through each valid port.
+  **Process Detection:** Sequentially tries `lsof`, `ss`, and `netstat` to find PIDs associated with listening TCP sockets on the current port.
+  **PID Extraction & Display:** If PIDs are found, parses them and uses `ps` to display detailed process information.
+  **User Confirmation:** Prompts the user interactively with a timeout.
+  **Termination Sequence (if confirmed):**
     *   Sends `SIGTERM` (`kill <pid>`) to allow graceful shutdown.
     *   Pauses briefly.
     *   Checks if the process is still running (`ps -p <pid>`).
     *   If still running, sends `SIGKILL` (`kill -9 <pid>`) for forceful termination.
-7.  **Logging:** Reports the status for each port and the outcome of any kill attempts.
+  **Logging:** Reports the status for each port and the outcome of any kill attempts.
 
 ---
 
-## 6. Configuration 🔧
+##  Configuration 🔧
 
 Modify these variables near the top of `port-killer.sh` to change default behavior:
 
@@ -138,7 +128,7 @@ Modify these variables near the top of `port-killer.sh` to change default behavi
 
 ---
 
-## 7. Important Notes & Warnings ☠️
+##  Important Notes & Warnings ☠️
 
 *   🛑 **EXTREME CAUTION ADVISED:** This script terminates processes. Killing essential system processes or processes holding unsaved data can cause **severe system instability or data loss**.
 *   **VERIFY PROCESSES:** Always carefully examine the process details (`PID`, `User`, `Command`, `Arguments`) displayed by the script before confirming termination. Ensure you are targeting the correct application.
@@ -149,17 +139,17 @@ Modify these variables near the top of `port-killer.sh` to change default behavi
 
 ---
 
-## 8. License 📜
+##  License 📜
 
 This script is distributed under the MIT License.
 
 ```text
 MIT License
 
-Copyright (c) [Year] [Your Name/Organization]
+portkiller (c) 2025 PYTHAI
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
+of portkiller and associated documentation files (the "portkiller"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
@@ -177,5 +167,5 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 Use code with caution.
 (Remember to replace [Year] and [Your Name/Organization])
-9. Contributing 🤝
+Contributing 🤝
 Suggestions and improvements are welcome. Please feel free to open an issue or submit a pull request.
