@@ -95,17 +95,17 @@ Kill process(es) on port 8000? (y/N, default N after 5 sec):
 
 ##  How It Works ⚙️
 
-  **Initialization:** Checks prerequisites and determines the target ports (arguments or defaults). Validates port numbers.
-  **Port Iteration:** Loops through each valid port.
-  **Process Detection:** Sequentially tries `lsof`, `ss`, and `netstat` to find PIDs associated with listening TCP sockets on the current port.
-  **PID Extraction & Display:** If PIDs are found, parses them and uses `ps` to display detailed process information.
-  **User Confirmation:** Prompts the user interactively with a timeout.
-  **Termination Sequence (if confirmed):**
+  **Initialization:** Checks prerequisites and determines the target ports (arguments or defaults). Validates port numbers<br />
+  **Port Iteration:** Loops through each valid port<br />
+  **Process Detection:** Sequentially tries `lsof`, `ss`, and `netstat` to find PIDs associated with listening TCP sockets on the current port<br />
+  **PID Extraction & Display:** If PIDs are found, parses them and uses `ps` to display detailed process information<br />
+  **User Confirmation:** Prompts the user interactively with a timeout<br />
+  **Termination Sequence (if confirmed):**<br />
     *   Sends `SIGTERM` (`kill <pid>`) to allow graceful shutdown.
-    *   Pauses briefly.
-    *   Checks if the process is still running (`ps -p <pid>`).
-    *   If still running, sends `SIGKILL` (`kill -9 <pid>`) for forceful termination.
-  **Logging:** Reports the status for each port and the outcome of any kill attempts.
+    *   Pauses briefly<br />
+    *   Checks if the process is still running (`ps -p <pid>`)<br />
+    *   If still running, sends `SIGKILL` (`kill -9 <pid>`) for forceful termination<br />
+  **Logging:** Reports the status for each port and the outcome of any kill attempts<br />
 
 
 
@@ -113,12 +113,12 @@ Kill process(es) on port 8000? (y/N, default N after 5 sec):
 
 Modify these variables near the top of `port-killer.sh` to change default behavior:
 
-*   `DEFAULT_PORTS`: Array of default ports to check if none are given as arguments.
+*   `DEFAULT_PORTS`: Array of default ports to check if none are given as arguments
     ```bash
     # Example: Check 80, 443, 8080 by default
     DEFAULT_PORTS=("80" "443" "8080")
     ```
-*   `PROMPT_TIMEOUT`: Duration (in seconds) to wait for user input at the kill prompt before defaulting to "No".
+*   `PROMPT_TIMEOUT`: Duration (in seconds) to wait for user input at the kill prompt before defaulting to "No"
     ```bash
     # Example: Wait 10 seconds
     PROMPT_TIMEOUT=10
@@ -128,12 +128,12 @@ Modify these variables near the top of `port-killer.sh` to change default behavi
 
 ##  Important Notes & Warnings ☠️
 
-*   🛑 **EXTREME CAUTION ADVISED:** This script terminates processes. Killing essential system processes or processes holding unsaved data can cause **severe system instability or data loss**.
-*   **VERIFY PROCESSES:** Always carefully examine the process details (`PID`, `User`, `Command`, `Arguments`) displayed by the script before confirming termination. Ensure you are targeting the correct application.
-*   **PERMISSIONS:** You can only kill processes owned by your user unless you run the script with `sudo`. Running with `sudo` significantly increases the risk of damaging your system if you kill the wrong process.
-*   **TCP ONLY:** The script currently focuses on **TCP** listening ports. UDP ports are not checked by default.
-*   **`netstat` LIMITATIONS:** If the script falls back to using `netstat`, it might require `sudo` privileges to display the PID associated with a listening port. Without `sudo`, it might detect a listening service but be unable to identify the specific PID to kill.
-*   **NO UNDO:** There is no undo function. Once a process is killed (especially with `SIGKILL`), it's gone.
+*   🛑 **EXTREME CAUTION ADVISED:** This script terminates processes. Killing essential system processes or processes holding unsaved data can cause **severe system instability or data loss**<br />
+*   **VERIFY PROCESSES:** Always carefully examine the process details (`PID`, `User`, `Command`, `Arguments`) displayed by the script before confirming termination. Ensure you are targeting the correct application<br />
+*   **PERMISSIONS:** You can only kill processes owned by your user unless you run the script with `sudo`. Running with `sudo` significantly increases the risk of damaging your system if you kill the wrong process<br />
+*   **TCP ONLY:** The script currently focuses on **TCP** listening ports. UDP ports are not checked by default<br />
+*   **`netstat` LIMITATIONS:** If the script falls back to using `netstat`, it might require `sudo` privileges to display the PID associated with a listening port. Without `sudo`, it might detect a listening service but be unable to identify the specific PID to kill<br />
+*   **NO UNDO:** There is no undo function. Once a process is killed (especially with `SIGKILL`), it's gone<br />
 
 ---
 
